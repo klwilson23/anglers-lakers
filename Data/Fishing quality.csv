@@ -1,0 +1,100 @@
+WaterbodyID,Area (ha),Mean Fork Length (mm),Mean CPUE (fish per gillnet hr),Survey Type,Morphotype
+YT_Aishihik,14747,509,1.13,SPIN Summary,Large body
+YT_Alligator,629,371,0.57,CPUE Gillnet Set,Large body
+00020ATLL,58793,499,1.01,SPIN Summary,Large body
+00013KUSR,9068,461,0.68,SPIN Summary,Large body
+YT_Blind,416,438,0.57,CPUE Gillnet Set,Large body
+YT_Bonnet Plume,405,459,1.93,CPUE Gillnet Set,Large body
+YT_Braeburn,562,460,0.17,CPUE Gillnet Set,Large body
+YT_Canyon,870,563,0.18,CPUE Gillnet Set,Large body
+YT_Canyon,870,571,0.18,CPUE Gillnet Set,Large body
+YT_Caribou,51,388,3.81,SPIN Summary,Small body
+YT_Chadburn,144,406,1.38,SPIN Summary,Large body
+YT_Claire South/North,2040,495,0.07,CPUE Gillnet Set,Large body
+YT_Coal,NA,445,1.29,CPUE Gillnet Set,Large body
+YT_Coghlan,823,445,0.58,CPUE Gillnet Set,Large body
+YT_Connolly,514,571,0.5,CPUE Gillnet Set,Large body
+YT_Crag,567,645,0.14,CPUE Gillnet Set,Large body
+YT_Dalayee,1060,443,0.88,CPUE Gillnet Set,Large body
+YT_Dezadeash,7968,641,1.73,SPIN Summary,Large body
+YT_Drury,2700,556,0.15,CPUE Gillnet Set,Large body
+YT_Poisson,NA,556,0.67,CPUE Gillnet Set,Large body
+YT_Duo,21,483,2.83,CPUE Gillnet Set,Large body
+YT_Twin East,61,533,0.69,SPIN Summary,Large body
+YT_Ethyl,4610,573,0.3,SPIN Summary,Large body
+YT_Fairchild,NA,338,3,CPUE Gillnet Set,Large body
+YT_Finlayson,2070,500,0.25,CPUE Gillnet Set,Large body
+YT_Fire,535,504,1,CPUE Gillnet Set,Large body
+YT_Fish,1386,390,3.71,SPIN Summary,Small body
+YT_Fortin,1498,646,0.36,CPUE Gillnet Set,Large body
+YT_Fox,1602,448,0.75,SPIN Summary,Large body
+YT_Frances,9941,489,0.32,CPUE Gillnet Set,Large body
+YT_Frank,586,443,0.29,CPUE Gillnet Set,Large body
+YT_Fredrick,445,455,0.24,CPUE Gillnet Set,Large body
+YT_Frenchmen,1441,533,0.31,SPIN Summary,Large body
+YT_Glenlyon,466,698,0.1,CPUE Gillnet Set,Large body
+YT_Granite,174,332,2.13,CPUE Gillnet Set,Large body
+YT_Grass Round,117,479,1.13,CPUE Gillnet Set,Large body
+YT_Grass West,158,523,1.38,CPUE Gillnet Set,Large body
+YT_Howard Lower,59,401,2,CPUE Gillnet Set,Large body
+YT_Howard Upper,200,353,0.6,CPUE Gillnet Set,Large body
+YT_Jake Glass,NA,419,7,CPUE Gillnet Set,Large body
+YT_Jo-Jo,639,373,2.29,CPUE Gillnet Set,Large body
+YT_Kathleen,3398,480,1.86,SPIN Summary,Small body
+YT_Ken,NA,527,0.17,CPUE Gillnet Set,Large body
+YT_Kluane,40821,552,1.02,SPIN Summary,Large body
+YT_Klukshu,151,375,0.86,CPUE Gillnet Set,Large body
+YT_Kusawa,14200,443,1.47,SPIN Summary,Large body
+YT_Laberge,20100,485,0.5,SPIN Summary,Large body
+YT_Lewes,137,358,3.31,SPIN Summary,Small body
+YT_Little Atlin,4033,554,0.24,SPIN Summary,Large body
+YT_Little Fox,67,362,1.6,SPIN Summary,Small body
+YT_Little Fox,161,356,5.7,SPIN Summary,Small body
+YT_Little Kalzas,993,456,0.5,CPUE Gillnet Set,Large body
+YT_Little Salmon,6321,434,0.17,SPIN Summary,Large body
+YT_Little Tarfu,NA,608,0.2,CPUE Gillnet Set,Large body
+YT_Long,1390,464,1.44,CPUE Gillnet Set,Large body
+YT_Louise,68,409,2.02,SPIN Summary,Small body
+YT_Lynne,NA,599,0.5,CPUE Gillnet Set,Large body
+YT_Mandanna,786,487,1.11,SPIN Summary,Large body
+YT_Marsh,9630,552,0.25,SPIN Summary,Large body
+YT_Mayo,9963,456,0.35,SPIN Summary,Large body
+YT_McEvoy,1904,681,0.2,CPUE Gillnet Set,Large body
+YT_M'Clintock South,,527,0.63,CPUE Gillnet Set,Large body
+YT_Minto,420,674,0.48,SPIN Summary,Large body
+YT_Moraine,NA,407,1.5,CPUE Gillnet Set,Large body
+YT_Moraine,NA,462,0.25,CPUE Gillnet Set,Large body
+00001TESR,1114.742556,500,0.38,CPUE Gillnet Set,Large body
+YT_Morris,1770,564,0.83,CPUE Gillnet Set,Large body
+YT_Mush,1888,436,1.18,SPIN Summary,Small body
+YT_Nisutlin,1541,510,0.2,CPUE Gillnet Set,Large body
+YT_North Main,252,440,0.38,CPUE Gillnet Set,Large body
+YT_Pine,603,503,0.07,SPIN Summary,Large body
+YT_Pinguicula,NA,462,1.4,CPUE Gillnet Set,Large body
+YT_Quiet,5441,519,0.73,SPIN Summary,Large body
+YT_Rose,NA,334,2.29,CPUE Gillnet Set,Large body
+YT_Sekulmun,4985,536,0.88,SPIN Summary,Large body
+YT_Simpson,2180,594,0.74,SPIN Summary,Large body
+YT_Snafu-Lower,284,525,0.17,CPUE Gillnet Set,Large body
+YT_Snafu-Upper,361,726,0.29,CPUE Gillnet Set,Large body
+YT_Spirit,67,382,0.14,CPUE Gillnet Set,Large body
+YT_Stewart,1041,443,0.4,CPUE Gillnet Set,Large body
+YT_Swim West,530,381,0.86,CPUE Gillnet Set,Large body
+YT_Tadru,1360,394,0.2,CPUE Gillnet Set,Large body
+00002TUTR,35458,480,1.15,SPIN Summary,Large body
+YT_Tarfu,405,567,0.2,SPIN Summary,Large body
+YT_Tay North Canol,977,543,0.57,CPUE Gillnet Set,Large body
+YT_Jim Cook,NA,662,1.33,CPUE Gillnet Set,Large body
+YT_Ten Mile,NA,577,0.43,CPUE Gillnet Set,Large body
+00007TESR,37720,501,0.24,SPIN Summary,Large body
+YT_Tatlmain,3141,671,1,SPIN Summary,Large body
+YT_Tincup,1790,410,0.28,CPUE Gillnet Set,Large body
+YT_Toobally-Lower,1060,771,0.58,CPUE Gillnet Set,Large body
+00051TUTR,5266.879124,427,0.55,CPUE Gillnet Set,Large body
+YT_Watson,1320,392,0.2,CPUE Gillnet Set,Large body
+YT_Wellesley,7381,634,0.41,CPUE Gillnet Set,Large body
+YT_Twin West,153,432,0.15,SPIN Summary,Large body
+YT_White,NA,401,6.83,CPUE Gillnet Set,Large body
+YT_Williamson,492,457,0.42,CPUE Gillnet Set,Large body
+YT_Wolf,7350,718,0.4,CPUE Gillnet Set,Large body
+YT_Wolverine,NA,438,2.83,CPUE Gillnet Set,Large body

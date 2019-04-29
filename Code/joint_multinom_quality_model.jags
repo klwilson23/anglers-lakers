@@ -1,0 +1,83 @@
+data{
+  for(i in 1:NlakeQuality)
+  {
+    quality[i] <- 1 # set expected quality to 0 (on the log-scale) or 1 in normalized
+  }
+}
+
+model {
+#  utility for anglers with distance
+for(n in 1:NanglerDist) {
+  for(l in 1:Nlakes) {
+    qualTrue[n,l] <- qualReg[index[trip[n]],l]
+    util[n,l] <- betaCamp[trip[n]]*camp[l] + betaManage[trip[n]]*manage[l] + betaLodges[trip[n]]*lodge[l] + betaQual[trip[n]]*qualTrue[n,l] + betaMorph[trip[n]]*morph[l] + betaAreas[trip[n]]*area[l] + betaCrowd[trip[n]]*crowd[l] + betaDist[trip[n]]*time[n,l] # regression with distance
+  }
+}
+
+#  utility for anglers without distance
+for(n in (NanglerDist+1):Nanglers) {
+  for(l in 1:Nlakes) {
+    qualTrue[n,l] <- qualReg[index[trip[n]],l]
+    util[n,l] <- betaCamp[trip[n]]*camp[l] + betaManage[trip[n]]*manage[l] + betaLodges[trip[n]]*lodge[l] + betaQual[trip[n]]*qualTrue[n,l] + betaMorph[trip[n]]*morph[l] + betaAreas[trip[n]]*area[l] + betaCrowd[trip[n]]*crowd[l] # regression without distance
+  }
+}
+
+# multinomial-logit likelihood for angler site-choice
+for(n in 1:Nanglers){
+  for(l in 1:Nlakes) {
+    log(mu[n,l]) <- (util[n,l]) # fit logit-normal regression to mu
+    pChoice[n,l] <- (mu[n,l]*weights[l])/sum(mu[n,]*weights) # transform mu's to multinomial probabilities and weight likelihood by choice-sampling weights
+  }
+anglerChoices[n,] ~ dmulti(pChoice[n,],1) #fit multinomial to choice-data
+}
+
+# estimating fishing quality as size-numbers tradeoff
+
+for(i in 1:Nlakes) {
+  Qv[i] <- (log((q_a/(1+q_b*cpue[i]))*cpue[i]) - (ln_a - slope*log(size[i]-thresh_size))) # should this whole thing be exp() or not?
+  Qh[i] <- (log(size[i]-thresh_size) - (ln_a - log((q_a/(1+q_b*cpue[i]))*cpue[i]))/slope)
+  Qual[i] <- exp((Qv[i] * (Qv[i]/(Qv[i]+Qh[i]))) + (Qh[i] * (Qh[i]/(Qv[i] + Qh[i]))))
+  qualReg[1,i] <- exp(Qv[i])
+  qualReg[2,i] <- exp(Qh[i])
+  qualReg[3,i] <- (Qual[i])
+}
+
+# likelihood for all lakes with fishing quality data
+for(i in 1:NlakeQuality)
+{
+  Tot_Qv[i] <- log((q_a/(1+q_b*TotalCpue[i]))*TotalCpue[i]) - (ln_a - slope*log(TotalSize[i]-thresh_size))
+  Tot_Qh[i] <- log(TotalSize[i]-thresh_size) - (ln_a - log((q_a/(1+q_b*TotalCpue[i]))*TotalCpue[i]))/slope
+  Tot_Qual[i] <- (Tot_Qv[i] * (Tot_Qv[i]/(Tot_Qv[i]+Tot_Qh[i]))) + (Tot_Qh[i] * (Tot_Qh[i]/(Tot_Qv[i] + Tot_Qh[i])))
+  quality[i] ~ dlnorm(Tot_Qual[i],tau.qual) # likelihood for fishing quality data
+}
+
+# declaring priors
+a ~ dnorm(exp(10),0.001)
+ln_a <- log(a)
+slope ~ dnorm(3,0.01)T(0,)
+thresh_size ~ dnorm(250,0.01)T(0,min(min(size),min(TotalSize)))
+
+# catchability parameters are 'data'
+q_a <- 0.2728 # from maximum likelihood estimates
+q_b <- 0.9656 # from maximum likelihood estimates
+
+# variance priors
+tau.qual ~ dhalfcauchy(5)
+
+pi[1] <- 1/3 # prior probability that fishing quality is Qv
+pi[2] <- 1/3 # prior probability that fishing quality is Qh
+pi[3] <- 1/3 # prior probability that fishing quality is Qtotal
+
+#  priors on parts-worth utility coefficients
+for(v in 1:Nvisit) {
+  betaDist[v] ~ dnorm(0,0.001)
+  betaLodges[v] ~ dnorm(0,0.001)
+  betaQual[v] ~ dnorm(0,0.001)
+  betaAreas[v] ~ dnorm(0,0.001)
+  betaMorph[v] ~ dnorm(0,0.001)
+  betaCamp[v] ~ dnorm(0, 0.001)
+  betaManage[v] ~ dnorm(0,0.001)
+  betaCrowd[v] ~ dnorm(0,0.001)
+  index[v] ~ dcat(pi[])
+}
+}
