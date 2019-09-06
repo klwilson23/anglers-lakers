@@ -64,9 +64,12 @@ q_b <- 0.9656 # from maximum likelihood estimates
 # variance priors
 tau.qual ~ dhalfcauchy(5)
 
-pi[1] <- 1/3 # prior probability that fishing quality is Qv
-pi[2] <- 1/3 # prior probability that fishing quality is Qh
-pi[3] <- 1/3 # prior probability that fishing quality is Qtotal
+pi[1:3,1] ~ ddirch(alphas[1:3,1])  # prior probability that fishing quality is Qv, Qh, or Qtotal
+pi[1:3,2] ~ ddirch(alphas[1:3,2])  # prior probability that fishing quality is Qv, Qh, or Qtotal
+for(i in 1:3){
+  alphas[i,1] <- 1
+  alphas[i,2] <- 1
+}
 
 #  priors on parts-worth utility coefficients
 for(v in 1:Nvisit) {
@@ -78,6 +81,6 @@ for(v in 1:Nvisit) {
   betaCamp[v] ~ dnorm(0, 0.001)
   betaManage[v] ~ dnorm(0,0.001)
   betaCrowd[v] ~ dnorm(0,0.001)
-  index[v] ~ dcat(pi[])
+  index[v] ~ dcat(pi[1:3,v])
 }
 }
